@@ -1,0 +1,7 @@
+---
+applications:
+- name: pshelloworld
+  memory: 64MB
+  instances: 1
+  command: node ./app.js
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
