@@ -22,6 +22,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^2.9.34",
+    "cfenv": "^1.0.0",
     "mysql": "^2.8.0"
   }
 }
