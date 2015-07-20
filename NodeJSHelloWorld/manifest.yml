@@ -1,7 +1,9 @@
 ---
 applications:
-- name: pshelloworld
+- name: NodeJSHelloWorld
   memory: 64MB
   instances: 1
   command: node ./app.js
+  host: NodeJSHelloWorld
+  path: .  
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack
