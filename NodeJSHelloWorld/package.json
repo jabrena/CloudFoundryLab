@@ -4,12 +4,12 @@
   "description": "hello world",
   "main": "app.js",
   "scripts": {
-    "start": "node index.js",    
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  }, 
+  },
   "engines": {
     "node": "0.12.x"
-  },  
+  },
   "keywords": [
     "cf"
   ],
@@ -19,5 +19,9 @@
   },
   "readme": "README.md",
   "author": "jab",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^2.9.34",
+    "mysql": "^2.8.0"
+  }
 }
