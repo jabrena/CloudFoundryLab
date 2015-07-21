@@ -1,0 +1,8 @@
+---
+applications:
+- name: PHPHelloWorld
+  memory: 128MB
+  instances: 1
+  host: PHPHelloWorld
+  path: .
+  buildpack: https://github.com/cloudfoundry/php-buildpack.git
