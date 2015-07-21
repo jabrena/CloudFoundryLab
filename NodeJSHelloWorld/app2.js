@@ -1,9 +1,9 @@
 // Load the http module to create an http server.
 var http = require('http');
 var mysql      = require('mysql');
-//var Promise = require('bluebird')
+var Promise = require('bluebird')
 
-//Promise.promisifyAll(mysql);
+Promise.promisifyAll(mysql);
 
 // Configure our HTTP server to respond with Hello World to all requests.
 var server = http.createServer(function (request, response) {
@@ -41,11 +41,11 @@ var resultExample = 0;
         });
     
 
- 
+/* 
 connection.connect();
  connection.end();
+*/
 
-/*
     Promise.promisify(connection.query, connection)('SELECT * FROM demo').then(function (rows) {
       //console.log('got rows!')
       //console.dir(rows)
@@ -56,7 +56,7 @@ connection.connect();
       connection.end()
     })
 
-*/
+
 
     response.end('The solution is: ', resultExample+"");
 
