@@ -1,0 +1,11 @@
+---
+applications:
+- name: StaticWebsiteHelloWorld
+  memory: 64MB
+  instances: 1
+  host: StaticWebsiteHelloWorld
+  path: .  
+  root: .  
+  buildpack: https://github.com/cloudfoundry/staticfile-buildpack
+
+    
