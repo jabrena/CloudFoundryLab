@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>This is title</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js" ></script>
+</header>
+<body>
+    <h1>Hello world</h1>
+    <script>
+        $(function() {
+ 
+            console.log("https://api.37.48.81.170.xip.io/v2/info");
+            $.ajax({
+                url: 'https://api.37.48.81.170.xip.io/v2/info',
+                type : 'GET',
+                success : function (data) {
+                    console.log(data);
+                },
+                error : function (data, errorThrown) {
+                    console.log(data);
+                }               
+            });
+
+            console.log("https://uaa.37.48.81.170.xip.io/oauth/token");
+            $.ajax({
+                url: 'https://uaa.37.48.81.170.xip.io/oauth/token',
+                type : 'POST',
+                contentType: "application/x-www-form-urlencoded",
+                dataType: 'json',                
+                headers: { 'Authorization': 'Basic Y2Y6'},
+                data : {"grant_type" : "password", "username" : "admin", "password" : "c1oudc0w", "client_id" : "cf"},
+                success : function (data) {
+                    console.log(data);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
+                }              
+            });
+
+        });
+    </script>
+</body>
+</html>
