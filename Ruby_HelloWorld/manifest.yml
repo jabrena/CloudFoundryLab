@@ -1,0 +1,7 @@
+---
+applications:
+- name: RubyHelloWorld
+  memory: 512MB
+  disk_quota: 512MB
+  path: .
+  buildpack: https://github.com/cloudfoundry/ruby-buildpack.git
