@@ -1,0 +1,9 @@
+---
+applications:
+- name: NodeJSSSL
+  memory: 64MB
+  instances: 1
+  command: node ./index.js
+  host: NodeJSSSL
+  path: .  
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
