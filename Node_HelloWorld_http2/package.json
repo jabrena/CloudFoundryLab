@@ -1,0 +1,19 @@
+{
+  "name": "nodehwhttp2",
+  "version": "0.1.0",
+  "description": "An example to run a http/2 server with Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "http2",
+    "http/2"
+  ],
+  "author": "Juan Antonio Breña Moral <bren@juanantonio.info> (http://www.juanantonio.info)",
+  "license": "MIT",
+  "dependencies": {
+    "http2": "3.2.0"
+  }
+}

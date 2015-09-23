@@ -1,0 +1,9 @@
+---
+applications:
+- name: nodehttp2express
+  memory: 512MB
+  instances: 1
+  command: node ./index.js
+  host: nodehttp2express
+  path: .  
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
