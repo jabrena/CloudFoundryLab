@@ -9,7 +9,13 @@ app.get('/ssl/', function (req, res) {
     console.log(req.headers);
 
     res.header('Content-type', 'text/html');
-    return res.end('<h1>Testing http headers</h1>' + '<pre>' + JSON.stringify(req.headers) + '</pre>');
+
+    var ssl = false;
+    if(req.headers['x-forwarded-proto'] === "https"){
+    	ssl = true;
+    }
+
+    return res.end('<h1>Testing http headers</h1>' + "<h2>https: " + ssl + "</h2>" + '<pre>' + JSON.stringify(req.headers) + '</pre>');
 });
 
 
