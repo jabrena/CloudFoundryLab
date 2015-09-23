@@ -14,8 +14,8 @@ app.get('/', function (req, res) {
 });
 
 var options = {
-    key: fs.readFileSync('./certificate/privkey.pem'),
-    cert: fs.readFileSync('./certificate/cert.pem')
+    key: fs.readFileSync('./certificate/localhost.key'),
+    cert: fs.readFileSync('./certificate/localhost.crt')
 };
 var port = process.env.VCAP_APP_PORT || 8080;
 http2.createServer(options, app).listen(port);
