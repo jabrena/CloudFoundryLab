@@ -1,0 +1,11 @@
+---
+applications:
+- name: nodehwmysql
+  memory: 512MB
+  instances: 1
+  command: node ./index2.js
+  host: nodehwmysql
+  path: .  
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
+  services:
+  - mySQLService
