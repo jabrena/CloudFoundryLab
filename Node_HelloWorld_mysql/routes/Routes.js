@@ -4,8 +4,6 @@
 var bodyParser = require('body-parser');
 var mysql      = require('mysql');
 
-//var MySQLService = require("../services/MySQLService");
-//MySQLService = new MySQLService();
 var Service1 = require("../services/Service1");
 Service1 = new Service1();
 
