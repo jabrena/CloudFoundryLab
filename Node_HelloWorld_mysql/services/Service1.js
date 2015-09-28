@@ -16,6 +16,8 @@ Service1.prototype.init = function () {
 
         try {
 
+            console.log(process.env.VCAP_SERVICES);
+
             self.MySQLHelper.init().then(function (result) {
                 console.log("result", result);
                 return resolve(result);

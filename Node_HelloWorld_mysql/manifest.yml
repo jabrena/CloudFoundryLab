@@ -7,5 +7,3 @@ applications:
   host: nodehwmysql
   path: .  
   buildpack: https://github.com/cloudfoundry/nodejs-buildpack
-  services:
-  - mySQLService
