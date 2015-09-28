@@ -2,7 +2,7 @@
   "name": "helloworld2",
   "version": "1.0.0",
   "description": "hello world",
-  "main": "app2.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app2.js",
     "test": "echo \"Error: no test specified\" && exit 1"
