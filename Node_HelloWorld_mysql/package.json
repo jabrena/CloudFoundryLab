@@ -14,8 +14,8 @@
   "author": "Juan Antonio Breña Moral <bren@juanantonio.info> (http://www.juanantonio.info)",
   "license": "MIT",
   "dependencies": {
-    "body-parser": "^1.14.0",
-    "ejs": "^2.3.4",
+    "body-parser": "1.14.0",
+    "ejs": "2.3.4",
     "express": "4.13.3",
     "mysql": "2.9.0"
   }
