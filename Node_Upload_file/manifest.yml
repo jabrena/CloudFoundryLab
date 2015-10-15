@@ -1,0 +1,9 @@
+---
+applications:
+- name: noderecordvideo
+  memory: 512MB
+  instances: 1
+  command: node ./index.js
+  host: noderecordvideo
+  path: .  
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
