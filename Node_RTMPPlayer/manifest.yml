@@ -1,0 +1,9 @@
+---
+applications:
+- name: nodertmpplayer
+  memory: 256MB
+  instances: 1
+  command: node ./index.js
+  host: nodertmpplayer
+  path: .  
+  buildpack: https://github.com/cloudfoundry/nodejs-buildpack
