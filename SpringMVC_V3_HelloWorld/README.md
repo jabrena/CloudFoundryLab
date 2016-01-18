@@ -1,1 +1,0 @@
-Example of Spring MVC controller.

@@ -1,8 +1,0 @@
----
-applications:
-- name: PythonHelloWorld
-  memory: 128MB
-  disk_quota: 256MB
-  random-route: true
-  command: python hello.py
-  buildpack: https://github.com/cloudfoundry/buildpack-python.git

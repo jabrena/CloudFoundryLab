@@ -1,9 +1,0 @@
----
-applications:
-- name: nodehwrest
-  memory: 256MB
-  instances: 1
-  command: node ./index.js
-  host: nodehwrest
-  path: .  
-  buildpack: https://github.com/cloudfoundry/nodejs-buildpack

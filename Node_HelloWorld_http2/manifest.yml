@@ -1,9 +1,0 @@
----
-applications:
-- name: nodehttp2
-  memory: 512MB
-  instances: 1
-  command: node ./index.js
-  host: nodehttp2
-  path: .  
-  buildpack: https://github.com/cloudfoundry/nodejs-buildpack

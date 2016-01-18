@@ -1,9 +1,0 @@
-
----
-applications:
-- name: HelloWorldJSP
-  memory: 512M
-  instances: 1
-  path: ./target/HelloWorldJSP.war
-  buildpack: https://github.com/cloudfoundry/java-buildpack.git
-  stack: cflinuxfs2
