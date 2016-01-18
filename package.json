@@ -1,0 +1,40 @@
+{
+  "name": "cloudfoundrylab",
+  "version": "0.1.0",
+  "description": "A presentation about Cloud Foundry",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jabrena/CloudFoundryLab.git"
+  },
+  "keywords": [
+    "cloud",
+    "foundry",
+    "cf",
+    "paas"
+  ],
+  "author": "Juan Antonio Breña Moral",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jabrena/CloudFoundryLab/issues"
+  },
+  "homepage": "https://github.com/jabrena/CloudFoundryLab#readme",
+
+  "dependencies": {
+    "reveal.js": "^3.2.0"
+  },
+
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-cli": "0.1.13",
+    "grunt-connect": "0.2.0",
+    "grunt-jsdoc": "1.1.0",
+    "grunt-open": "0.2.3"
+  }
+}
