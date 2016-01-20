@@ -26,7 +26,10 @@
     <meta http-equiv="cache-control" content="no-cache" />
     <meta http-equiv="expires" content="0" />
     <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
-    <meta http-equiv="pragma" content="no-cache" />             
+    <meta http-equiv="pragma" content="no-cache" /> 
+
+    <!-- Icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="Images/favicon-16x16.png">
 </head>
 <body>
     <div class="reveal">
@@ -40,7 +43,6 @@
                 <h2>Agenda</h2>
                 <ul>
                     <li>What is Cloud Foundry?</li>
-                    <li>Alternatives</li>
                     <li>The Architecture</li>
                     <li>The Buildpack way</li>
                     <li>The Docker way</li>
@@ -51,8 +53,70 @@
                         <li><a href="https://nodejs.org/en/" target="_blank">Node.js</a>: Express</li>
                     </ul>
                     <li>Conclusions</li>
+                    <li>References</li>
                 </ul>
             </section>
+            <section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>What is Cloud Foundry?</h2>
+                    <p>
+    Cloud Foundry is an open source cloud computing platform as a service (PaaS) originally developed by VMware and now owned by Pivotal Software - a joint venture by EMC, VMware and General Electric. Cloud Foundry was designed and developed by a small team from Google led by Derek Collison and was originally called project B29.
+                    </p>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>What is a PAAS?</h2>
+                    <img src="./Images/traditional-and-cf-paas.png" width="75%"/>
+                </section>
+            </section>
+            <section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>The Architecture</h2>
+                    <img src="./Images/cf_architecture_block.png" width="85%"/>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>CF Router</h2>
+                    <p>
+The router routes incoming traffic to the appropriate component, usually the Cloud Controller or a running application on a DEA node. In a larger production setup there is a pool of Routers load balanced behind a load balancer or http cache/balancer.
+                    </p>
+                    <img src="./Images/sysbound2.png" width="65%"/>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>UAA</h2>
+                    <p>
+The OAuth2 server (the UAA) and Login Server work together to provide identity management.
+                    </p>
+                    <img src="./Images/uaa-environ.png" width="75%"/>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>DEA, Droplet Execution Agent</h2>
+                    <ul>
+                        <li>Manage Warden containers: The DEA stages applications and runs applications in Warden containers.</li>
+                        <li>Stage applications: When a new application or a new version of an application is pushed to Cloud Foundry, the Cloud Controller selects a DEA from the pool of available DEAs to stage the application. The DEA uses the appropriate buildpack to stage the application. The result of this process is a droplet.</li>
+                        <li>Run droplets: A DEA manages the lifecycle of each application instance running in it, starting and stopping droplets upon request of the Cloud Controller.</li>
+                    </ul>
+                </section>
+            </section>
+            <section data-background="./Images/CloudFoundry3.png">
+                <h2>References</h2>
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Cloud_Foundry" target="_blank">https://en.wikipedia.org/wiki/Cloud_Foundry</a></li>
+                    <li><a href="https://github.com/cloudfoundry/gorouter" target="_blank">https://github.com/cloudfoundry/gorouter</a></li>
+                    <li><a href="https://docs.cloudfoundry.org/concepts/security.html" target="_blank">https://docs.cloudfoundry.org/concepts/security.html</a></li>
+                    <li><a href="https://blog.pivotal.io/pivotal-cloud-foundry/products/open-standards-in-cloud-foundry-identity-services" target="_blank">https://blog.pivotal.io/pivotal-cloud-foundry/products/open-standards-in-cloud-foundry-identity-services</a></li>
+                    <li><a href="https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html" target="_blank">https://docs.cloudfoundry.org/concepts/architecture/execution-agent.html</a></li>
+                    <li><a href="http://biarca.io/technologies/cloud-foundry/" target="_blank">http://biarca.io/technologies/cloud-foundry/</a></li>
+                    <li><a href="http://www.activestate.com/blog/2014/09/cloud-foundry-diego-explained-onsi-fakhouri" target="_blank">http://www.activestate.com/blog/2014/09/cloud-foundry-diego-explained-onsi-fakhouri</a></li>                                      
+
+<!--
+Threee layers of Cloud Computing
+http://es.slideshare.net/ramnivas2/cloudfoundry-architecture
+https://bosh.io/
+https://www.vagrantup.com/
+-->
+
+                </ul>
+            </section>
+            
             <section data-background="./Images/CloudFoundry3.png">
                 <h2>Thanks</h2>
             </section>
