@@ -42,31 +42,90 @@
             <section data-background="./Images/CloudFoundry3.png">
                 <h2>Agenda</h2>
                 <ul>
-                    <li>Where we come from?</li>
+                    <li>Educational goals</li>
+                    <li>Current situation</li>
                     <li>What is Cloud Foundry?</li>
                     <li>The Architecture</li>
-                    <li>The Buildpack way</li>
-                    <li>The Docker way</li>
-                    <li>Limitations</li>
+                    <li>The deployment process</li>
                     <li>Demos:</li>
                     <ul>
-                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Java JEE</a>: Spring MVC</li>
-                        <li><a href="https://nodejs.org/en/" target="_blank">Node.js</a>: Express</li>
+                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Java EE</a>: JSP</li>
+                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Spring Cloud</a>: Spring Cloud</li>
+                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Vert-x3</a>: Spring Cloud</li>
+                        <li><a href="https://nodejs.org/en/" target="_blank">Node.js + Express</a>: Express</li>
                     </ul>
                     <li>Conclusions</li>
                     <li>References</li>
                 </ul>
             </section>
+            <section data-background="./Images/CloudFoundry3.png">
+                <h2>Educational Goals</h2>
+                <ul>
+                    <li>Introduction to three layers of Cloud Computing</li>
+                    <li>The importance and beneficts of a Private Cloud on a Corporation</li>
+                    <li>Discover the state of art on Commercial PaaS</li>
+                    <li>Introduction to BOSCH &amp; StemCell</li>
+                    <li>Introduction to Cloud Foundry</li>
+                    <li>Debate about application servers vs the Containerless approach</li>
+                    <li>Learn to not force the team to a unique programming languaje</li>
+                    <li>Learn to use the quote: "Divide &amp; Conquer"</li>
+                </ul>
+            </section>
+            <section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Current situation</h2>
+                    <ul>
+                        <li>Monolithic &amp; large JEE applications run on Application Servers</li>
+                        <li>Every teams use the same programming language or approach</li>
+                        <li>Many development has a coupled design with the associated services</li>
+                    </ul>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Current situation</h2>
+                    <p>
+                        <li><a href="https://www-01.ibm.com/support/knowledgecenter/SSEQTP_7.0.0/com.ibm.websphere.nd.doc/info/ae/ae/twim_fedmap_datasconf.html" target="_blank">How to configure a data source on WAS (19 steps)</a></li>
+                        <li><a href="https://www-01.ibm.com/support/knowledgecenter/SSAW57_8.0.0/com.ibm.websphere.nd.doc/info/ae/ae/covr_arch.html" target="_blank">WAS Architecture</a></li>
+                    </p>
+                    <img src="./Images/websphere.gif" />
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Current situation</h2>
+                    <img src="./Images/mammoth.jpg" width="70%" />
+                </section>
+            </section>
             <section>
                 <section data-background="./Images/CloudFoundry3.png">
                     <h2>What is Cloud Foundry?</h2>
                     <p>
-    Cloud Foundry is an open source cloud computing platform as a service (PaaS) originally developed by VMware and now owned by Pivotal Software - a joint venture by EMC, VMware and General Electric. Cloud Foundry was designed and developed by a small team from Google led by Derek Collison and was originally called project B29.
+    Cloud Foundry is an open source cloud computing platform as a service (PaaS) originally developed by VMware and now owned by Pivotal Software - a joint venture by EMC, VMware and General Electric.
                     </p>
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
+                    <h2>The three layers of Cloud Computing</h2>
+                    <ul>
+                        <li>SaaS: Software as Service</li>
+                        <li>PaaS: Platform as Service</li>
+                        <li>IaaS: Infrastructure as Service</li>
+                    </ul>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
                     <h2>What is a PAAS?</h2>
-                    <img src="./Images/traditional-and-cf-paas.png" width="75%"/>
+                    <img src="./Images/traditional-and-cf-paas.png" width="70%"/>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>What is BOSCH?</h2>
+                    <p>
+BOSH is a project that unifies release engineering, deployment, and lifecycle management of small and large-scale cloud software. BOSH can provision and deploy software over hundreds of VMs. 
+                    </p>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>What is a StemCell?</h2>
+                    <p>
+A stemcell is a versioned Operating System image wrapped with IaaS specific packaging.
+                    </p>
+                    <p>
+A typical stemcell contains a bare minimum OS skeleton with a few common utilities pre-installed, a BOSH Agent, and a few configuration files to securely configure the OS by default.
+                    </p>
                 </section>
             </section>
             <section>
@@ -77,16 +136,9 @@
                 <section data-background="./Images/CloudFoundry3.png">
                     <h2>CF Router</h2>
                     <p>
-The router routes incoming traffic to the appropriate component, usually the Cloud Controller or a running application on a DEA node. In a larger production setup there is a pool of Routers load balanced behind a load balancer or http cache/balancer.
+The router routes incoming traffic to the appropriate component, usually the Cloud Controller or a running application on a DEA node.
                     </p>
                     <img src="./Images/sysbound2.png" width="65%"/>
-                </section>
-                <section data-background="./Images/CloudFoundry3.png">
-                    <h2>UAA</h2>
-                    <p>
-The OAuth2 server (the UAA) and Login Server work together to provide identity management.
-                    </p>
-                    <img src="./Images/uaa-environ.png" width="75%"/>
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
                     <h2>DEA, Droplet Execution Agent</h2>
@@ -109,14 +161,14 @@ The OAuth2 server (the UAA) and Login Server work together to provide identity m
                     <li><a href="http://www.activestate.com/blog/2014/09/cloud-foundry-diego-explained-onsi-fakhouri" target="_blank">http://www.activestate.com/blog/2014/09/cloud-foundry-diego-explained-onsi-fakhouri</a></li>                                      
 
 <!--
-Threee layers of Cloud Computing
 http://es.slideshare.net/ramnivas2/cloudfoundry-architecture
 https://bosh.io/
 https://www.vagrantup.com/
 http://es.slideshare.net/grodzinski/websphere-architecture-1
-https://www-01.ibm.com/support/knowledgecenter/SSAW57_8.0.0/com.ibm.websphere.nd.doc/info/ae/ae/covr_arch.html
-http://nishvitatechnologies.com/Technologies/WebsphereHowtoconfigureDatasourceinWAS.php
-https://www-01.ibm.com/support/knowledgecenter/SSEQTP_7.0.0/com.ibm.websphere.nd.doc/info/ae/ae/twim_fedmap_datasconf.html
+http://www.markkropf.com/blog/2015/2/19/an-applications-view-of-the-cf-stack
+http://www.slideshare.net/cdavisafc/cloud-foundry-technical-overview
+
+https://es.wikipedia.org/wiki/Java_EE
 -->
 
                 </ul>
