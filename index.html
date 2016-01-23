@@ -43,15 +43,15 @@
                 <h2>Agenda</h2>
                 <ul>
                     <li>Educational goals</li>
-                    <li>Current situation</li>
+                    <li>Current Java scenario</li>
                     <li>What is Cloud Foundry?</li>
-                    <li>The Architecture</li>
+                    <li>CF Architecture</li>
                     <li>The deployment process</li>
                     <li>Demos:</li>
                     <ul>
                         <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Java EE</a>: JSP</li>
-                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Spring Cloud</a>: Spring Cloud</li>
-                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Vert-x3</a>: Spring Cloud</li>
+                        <!-- <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Java Spring Cloud</a>: Spring Cloud</li>-->
+                        <li><a href="https://www.jcp.org/en/jsr/detail?id=342" target="_blank">Java Vert-x3</a>: Spring Cloud</li>
                         <li><a href="https://nodejs.org/en/" target="_blank">Node.js + Express</a>: Express</li>
                     </ul>
                     <li>Conclusions</li>
@@ -62,35 +62,34 @@
                 <h2>Educational Goals</h2>
                 <ul>
                     <li>Introduction to three layers of Cloud Computing</li>
-                    <li>The importance and beneficts of a Private Cloud on a Corporation</li>
+                    <li>The importance of a Private Cloud on a Corporation</li>
                     <li>Discover the state of art on Commercial PaaS</li>
                     <li>Introduction to BOSCH &amp; StemCell</li>
                     <li>Introduction to Cloud Foundry</li>
-                    <li>Debate about application servers vs the Containerless approach</li>
-                    <li>Learn to not force the team to a unique programming languaje</li>
+                    <li>Application servers vs the Containerless approach</li>
                     <li>Learn to use the quote: "Divide &amp; Conquer"</li>
                 </ul>
             </section>
             <section>
                 <section data-background="./Images/CloudFoundry3.png">
-                    <h2>Current situation</h2>
+                    <h2>Current Java scenario</h2>
                     <ul>
-                        <li>Monolithic &amp; large JEE applications run on Application Servers</li>
-                        <li>Every teams use the same programming language or approach</li>
-                        <li>Many development has a coupled design with the associated services</li>
+                        <li>Large JEE applications run on Application Servers</li>
+                        <li>Several projects has a coupled design with the services</li>
+                        <li>It is difficult to upgrade JDK</li>
+                        <li>Every teams use the same programming language</li>
                     </ul>
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
-                    <h2>Current situation</h2>
+                    <h2>Current Java scenario</h2>
+                    <ul>
+                        <li>Application servers included features not used by mayority of users.</li>
+                        <li>Configuration is not easy</li>
+                    </ul>
+                    <img src="./Images/websphere.gif" />
                     <p>
                         <li><a href="https://www-01.ibm.com/support/knowledgecenter/SSEQTP_7.0.0/com.ibm.websphere.nd.doc/info/ae/ae/twim_fedmap_datasconf.html" target="_blank">How to configure a data source on WAS (19 steps)</a></li>
-                        <li><a href="https://www-01.ibm.com/support/knowledgecenter/SSAW57_8.0.0/com.ibm.websphere.nd.doc/info/ae/ae/covr_arch.html" target="_blank">WAS Architecture</a></li>
                     </p>
-                    <img src="./Images/websphere.gif" />
-                </section>
-                <section data-background="./Images/CloudFoundry3.png">
-                    <h2>Current situation</h2>
-                    <img src="./Images/mammoth.jpg" width="70%" />
                 </section>
             </section>
             <section>
@@ -110,7 +109,7 @@
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
                     <h2>What is a PAAS?</h2>
-                    <img src="./Images/traditional-and-cf-paas.png" width="70%"/>
+                    <img src="./Images/traditional-and-cf-paas.png" width="60%"/>
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
                     <h2>What is BOSCH?</h2>
@@ -127,26 +126,99 @@ A stemcell is a versioned Operating System image wrapped with IaaS specific pack
 A typical stemcell contains a bare minimum OS skeleton with a few common utilities pre-installed, a BOSH Agent, and a few configuration files to securely configure the OS by default.
                     </p>
                 </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>What is a Microservice?</h2>
+                    <p>
+“Loosely coupled service oriented architecture with bounded contexts”.
+                    </p>
+                    <ul>
+                        <li>No, it’s not SOA circa 2004, even though there are some similar concepts, as the implementation is quite different.</li>
+                        <li>Loose coupling, meaning that you can deploy code whenever you want to and not have to ask anyone first.</li>
+                        <li>Domain Driven Design is key to separating things. You cannot have multiple representations of the same domain object.</li>
+                    </ul>
+                </section>
             </section>
             <section>
                 <section data-background="./Images/CloudFoundry3.png">
-                    <h2>The Architecture</h2>
-                    <img src="./Images/cf_architecture_block.png" width="85%"/>
+                    <h2>CF Architecture</h2>
+                    <img src="./Images/cf_architecture_block.png" width="75%"/>
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
                     <h2>CF Router</h2>
                     <p>
 The router routes incoming traffic to the appropriate component, usually the Cloud Controller or a running application on a DEA node.
                     </p>
-                    <img src="./Images/sysbound2.png" width="65%"/>
+                    <img src="./Images/sysbound2.png" width="60%"/>
+                    <p>
+                    <strong>Note:</strong> At the moment, it only supports http ports (80/443)
+                    </p>
                 </section>
                 <section data-background="./Images/CloudFoundry3.png">
-                    <h2>DEA, Droplet Execution Agent</h2>
+                    <h2>Cloud Controller</h2>
+                    <p>
+The Cloud Controller provides REST API endpoints for clients to access the system. The Cloud Controller manage the following concepts:
+                    </p>
                     <ul>
-                        <li>Manage Warden containers: The DEA stages applications and runs applications in Warden containers.</li>
+                        <li>Organizations, OrganizationQuota, Spaces &amp; SpacesQuota</li>
+                        <li>Stacks, Buildpacks &amp; Apps</li>
+                        <li>Routes &amp; Domains</li>
+                        <li>Services, Service Bindings, Service Instances, Service Plans &amp; User provided Services</li>
+                        <li>Events</li>
+                    </ul>
+                    <p>
+                        <strong>Demo:</strong> https://api.run.pivotal.io/v2/info
+                        <!-- http://jsbeautifier.org/ -->
+                    </p>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Droplet Execution Agent</h2>
+                    <ul>
+                        <li>Manage Warden containers: The DEA stages applications and runs applications in Warden/Garden containers.</li>
                         <li>Stage applications: When a new application or a new version of an application is pushed to Cloud Foundry, the Cloud Controller selects a DEA from the pool of available DEAs to stage the application. The DEA uses the appropriate buildpack to stage the application. The result of this process is a droplet.</li>
                         <li>Run droplets: A DEA manages the lifecycle of each application instance running in it, starting and stopping droplets upon request of the Cloud Controller.</li>
                     </ul>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Service Broker</h2>
+                    <img src="./Images/v2Services.png" width="70%"/>
+                </section>
+            </section>
+            <section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>The deployment process</h2>
+                    <p>
+Exist 2 ways to deploy apps:
+                    </p>
+                    <ul>
+                        <li>Using Buildpacks</li>
+                        <li>Using Docker containers</li>
+                    </ul>
+                    <p>
+                        <strong>REST API:</strong> <a href="http://apidocs.cloudfoundry.org/228/apps/creating_an_app.html" target="_blank">http://apidocs.cloudfoundry.org/228/apps/creating_an_app.html</a>
+                    </p>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Buildpacks</h2>
+                    <p>
+Buildpacks provide framework and runtime support for your applications. Buildpacks typically examine user-provided artifacts to determine what dependencies to download and how to configure applications to communicate with bound services.
+                    </p>
+                    <img src="./Images/buildpack.png" width="70%"/>
+                </section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Docker</h2>
+                    <p>
+                A Docker image consists of two things: a collection of layers to download and mount (the raw bits that form the file system) and metadata that describes what command should be run, as what user, and in what environment (the ENTRYPOINT and CMD directives, among others, specified in the Dockerfile).
+                    </p>
+                    <img src="./Images/Docker_logo.png" width="70%"/>
+                </section>
+            </section>
+            <section>
+                <section data-background="./Images/CloudFoundry3.png">
+                    <h2>Docker</h2>
+                    <p>
+                A Docker image consists of two things: a collection of layers to download and mount (the raw bits that form the file system) and metadata that describes what command should be run, as what user, and in what environment (the ENTRYPOINT and CMD directives, among others, specified in the Dockerfile).
+                    </p>
+                    <img src="./Images/Docker_logo.png" width="70%"/>
                 </section>
             </section>
             <section data-background="./Images/CloudFoundry3.png">
@@ -169,6 +241,8 @@ http://www.markkropf.com/blog/2015/2/19/an-applications-view-of-the-cf-stack
 http://www.slideshare.net/cdavisafc/cloud-foundry-technical-overview
 
 https://es.wikipedia.org/wiki/Java_EE
+https://docs.cloudfoundry.org/concepts/architecture/cloud-controller.html
+
 -->
 
                 </ul>
